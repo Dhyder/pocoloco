@@ -31,3 +31,9 @@ def chronical(request,img_id):
     except DoesNotExist:
         raise Http404()
     return render (request,"chronical.html", {"chronical": chronical}) 
+
+def location_filter(request, location):
+    locations = Location.objects.all()
+    images = Image.objects.filter(location__id = location)
+    title = 'Location Photos'
+    return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
