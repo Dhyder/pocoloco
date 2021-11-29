@@ -30,3 +30,20 @@ class Location(models.Model):
 
     def __str__(self):
         return self.location_name
+
+class Image(models.Model):
+    img = CloudinaryField('chronicles/')
+    img_name = models.CharField(max_length= 30)
+    img_description = models.TextField()
+    category = models.ForeignKey(Category,on_delete = models.CASCADE)
+    editor = models.ForeignKey(Editor,on_delete = models.CASCADE)
+    location = models.ForeignKey(Location,on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.img_name
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
