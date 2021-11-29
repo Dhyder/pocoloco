@@ -3,7 +3,7 @@
 * [Shaggy](https://github.com/Dhyder)
 
 ## Description
-A personal gallery application for displaying your photos for you and others to see.
+This is a Gallery Django application that allows uploading of images, showcasing and sharing via link. 
 
 ## Screenshots
 ![Heart](https://user-images.githubusercontent.com/86789832/143848413-317498bd-93fa-46e2-8fe4-8107b45edcdb.PNG)
