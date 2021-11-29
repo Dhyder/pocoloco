@@ -1,0 +1,329 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% load static%}
+{% block content %}
+{{block.super}}
+
+<!-- 
+<div class="container" style="">
+    <div id="video-container">
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <div class="inner">
+              <h1 style="color: coral;"><a href="/"><i class="bi bi-house"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="coral" class="bi bi-house" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+              </svg></i></a>The Artic <em>Gallery</em></h1>
+              
+                <div class="scroll-icon">
+                </div>    
+            </div>
+        </div>
+        <video autoplay="" loop="" muted>
+        	<source src="/static/images/loop.mp4" type="video/mp4" />
+        </video>
+    </div> -->
+
+
+
+    <section class="hero" id="hero">
+        <div class="heroText">
+            <img src="https://fontmeme.com/permalink/211128/4f3126e683633160aa4d7a1b70796937.png" alt="thrasher-font"
+            border="0" style="padding: 2%;" class="img-fluid">
+            <!-- <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
+                create a great video for your <strong class="custom-underline">website</strong>
+            </p> -->
+        </div>
+
+        <div class="videoWrapper">
+            <video autoplay="" loop="" muted="" class="custom-video" poster="videos/792bd98f3e617786c850493560e11c45.jpg">
+                <source src="/static/videos/loop2.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </section>
+
+    <div class="container-fluid" style="background-image: url(/static/images/img3.jpg);background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
+        <div class="container-fluid">
+            <div class="container header">
+                <div class="logo">
+                    <img src="https://fontmeme.com/permalink/211128/03918abaebf13d772027b8c7571d257e.png" alt="thrasher-font"
+                        border="0" style="padding: 2%;" class="img-fluid">
+                    <h2 style="font-family: 'Alegreya Sans SC', sans-serif; color: #fff;text-shadow: 2px 2px 4px #000;">Chronicals Of Vintasia</h2>
+                </div>
+                <div class="form">
+                    <!-- Adding a search form  -->
+                    <form class="" role="search" action="{% url 'search_results' %}">
+        
+        
+        
+                        <div class="input-group">
+                            <input style="align-items:center;display:flex;width: 0px;" type="text" placeholder="Search Image by Category" aria-describedby="button-addon1"
+                                class="form-control border-0 rounded rounded-pill bg-light" name="image">
+                                <button style="margin-top:-2px;margin-left: -5px;" id="goo" type="submit" class="btn btn-link text-default"><i class="fa fa-search"></i></button>
+                        </div>
+        
+                    </form>
+    
+        
+                    <!-- search form end -->
+                </div>
+                <div class="trending-searches">
+                    <p style="color: #d0d0d0;text-shadow: 2px 2px 4px #000; padding: 2px; font-size: smaller;">Top Searches: Vintage, Modern</p>
+                </div>
+            </div>
+        
+            <div style="margin-top: 10px;" class="container-fluid">
+                <!-- featured post -->
+                <section>
+                    <div class="container-fluid p-sm-0">
+                      <div class="row featured-post-slider">
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+                          <article class="card bg-dark text-center text-white border-0 rounded-0">
+                            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red.jpg" alt="post-thumb">
+                            <div class="card-img-overlay">
+                              <div class="card-content">
+                                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Vintage</p>
+                                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                                <a class="btn btn-light" href="/search/?image=vintage">Explore</a>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+                          <article class="card bg-dark text-center text-white border-0 rounded-0">
+                            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red2.jpg" alt="post-thumb">
+                            <div class="card-img-overlay">
+                              <div class="card-content">
+                                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Fashion</p>
+                                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                                <a class="btn btn-light" href="/search/?image=fashion">Explore</a>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+                          <article class="card bg-dark text-center text-white border-0 rounded-0">
+                            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/try2.jpg" alt="post-thumb">
+                            <div class="card-img-overlay">
+                              <div class="card-content">
+                                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Modern</p>
+                                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                                <a class="btn btn-light" href="/search/?image=modern">Explore</a>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+                          <article class="card bg-dark text-center text-white border-0 rounded-0">
+                            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red4.jpg" alt="post-thumb">
+                            <div class="card-img-overlay">
+                              <div class="card-content">
+                                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Memoirs</p>
+                                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                                <a class="btn btn-light" href="/search/?image=memoirs">Explore</a>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+                          <article class="card bg-dark text-center text-white border-0 rounded-0">
+                            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/try3.jpg" alt="post-thumb">
+                            <div class="card-img-overlay">
+                              <div class="card-content">
+                                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Retro</p>
+                                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                                <a class="btn btn-light" href="/search/?image=retro">Explore</a>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+                            <article class="card bg-dark text-center text-white border-0 rounded-0">
+                              <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red5.jpg" alt="post-thumb">
+                              <div class="card-img-overlay">
+                                <div class="card-content">
+                                  <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Nature</p>
+                                  <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                                  <a class="btn btn-light" href="/search/?image=nature">Explore</a>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /featured post -->
+                <hr class="style-one">
+                {%for location in locations%}
+                <a href="{%url 'location' location.id%}" class="btn btn-dark btn-sm rounded rounded-pill"
+                    style="margin-bottom: 20px;">{{location.location_name}}</a>
+                {%endfor%}
+        
+            </div>
+
+
+
+
+
+        </div>
+        
+        <div class="container">
+        
+            <!-- Looping through images   -->
+        
+        
+            <div class="row">
+        
+                {% for image in images %}
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                    <div class="portfolio-wrap ">
+                        <div class="portfolio-wrap hovereffect">
+                            <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
+                                <img style="width:100%;height:100%;margin-top: 0%;" src="{{image.img.url}}" href="" class="image" alt="Image">
+                                <div class="overlay">
+                                    <div class="text">View Chronical</div>
+                                    <p style="color: white">{{image.img_description}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="background-image: url(/static/images/img8.jpg);background-size: cover;background-repeat: no-repeat;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="text-shadow: 2px 2px 4px black;font-size: x-large;color: rgb(255, 255, 255)"><strong>{{image.img_name}}</strong></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img style="box-shadow: 2px 2px 4px black;"src="{{image.img.url}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="details" style="margin: 15px;">
+                                <p style="font-family: 'Alegreya Sans SC', sans-serif;text-shadow: 2px 2px 4px black;font-size: x-large;color: black">Category: {{image.category}}</p>
+                                <p style="font-family: 'Alegreya Sans SC', sans-serif; text-shadow: 2px 2px 4px black;font-size: large;color: #000;">Location: {{image.location}}</p>
+                                <small style="font-family: 'Alegreya Sans SC', sans-serif; text-shadow: 2px 2px 4px black;color: rgb(255, 255, 255);font-size: 20px;">- {{image.editor}}</small>
+        
+                            </div>
+                            <div class="modal-footer">
+                                <div class="text-align:center">
+                                    <input class="{{image.id}}" type="text" value="{{ image.img.url }}" />
+                                    <button class="btn btn-dark" onclick="copyToClipboard('.{{ image.id }}')"><i class="bi bi-clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                    </svg></i></button>
+                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+            </div>
+        
+        
+            <div class="row">
+                <h2 class="text-center">Images Unavailable</h2>
+            </div>
+            {% endfor %}
+        
+            <!-- Image details modal -->
+    
+    </div>
+    
+</div>
+<hr class="style-one">
+<section class="container-fluid" style="margin-top:10px;">
+    <div class="container-fluid p-sm-0">
+      <div class="row featured-post-slider">
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Vintage</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                <a class="btn btn-dark" href="/search/?image=vintage">Explore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red2.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Fashion</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                <a class="btn btn-dark" href="/search/?image=fashion">Explore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/try2.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Modern</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                <a class="btn btn-dark" href="/search/?image=modern">Explore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red4.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Memoirs</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                <a class="btn btn-dark" href="/search/?image=memoirs">Explore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/static/images/try3.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Retro</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                <a class="btn btn-dark" href="/search/?image=retro">Explore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+            <article class="card bg-dark text-center text-white border-0 rounded-0">
+              <img class="card-img rounded-0 img-fluid w-100" src="/static/images/red5.jpg" alt="post-thumb">
+              <div class="card-img-overlay">
+                <div class="card-content">
+                  <p class="text-uppercase" style="text-shadow: 2px 2px 4px black;font-size:20px;">Nature</p>
+                  <h4 class="card-title mb-4"><a class="text-white" href="/"></a></h4>
+                  <a class="btn btn-dark" href="/search/?image=nature">Explore</a>
+                </div>
+              </div>
+            </article>
+          </div>
+      </div>
+    </div>
+  </section>
+    <footer class="bg-dark text-center text-white"style="opacity: 0.5;">
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" >
+          © 2021 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">HeartofVintasia.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+{% bootstrap_javascript %}
+{% endblock %}
