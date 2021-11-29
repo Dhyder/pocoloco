@@ -13,7 +13,7 @@ This is a Gallery Django application that allows uploading of images, showcasing
 You can view the site at: [Heart of Vintasia](https://heartofvintasia.herokuapp.com/)
 
 ## User Story
-- View different photos that interest that me.
+- View different photos that interest me.
 - Click a single image to expand it and view the details of that photo.
 - Search under different categories.
 - Copy link to the photo for sharing with my friends.
