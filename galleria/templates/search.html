@@ -1,0 +1,100 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<div class="container-fluid" style="background-image: url(/static/images/img3.jpg);background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
+
+    <div class="container" style="padding: 5%;">
+
+        <!-- Looping through images   -->
+    
+<div class="row" style="margin-top:50px">
+    {% if images%}
+      <h2 style="color:blanchedalmond;text-shadow: 2px 2px 4px #000;">Found {{ images|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2 style="color:blanchedalmond;text-shadow: 2px 2px 4px #000;"> Found 0 images for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+    
+        <div class="row" style="margin-top:50px">
+            <!-- displaying images -->
+            <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h2 class="text-center"> {{ image.title }} </h2>
+            </div>
+    
+            <!--Display news Article images  -->
+            <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src="{{image.img.url}}" class="img-responsive" alt="Image">
+            </div> -->
+            {% for image in images %}
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" >
+                <div class="portfolio-wrap ">
+                    <div class="portfolio-wrap hovereffect">
+                        <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
+                            <img style="width:100%;height:100%;" src="{{image.img.url}}" href="" class="image" alt="Image">
+                            <div class="overlay">
+                                <div class="text">View Chronical</div>
+                                <p style="color: white">{{image.img_description}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><strong>{{image.img_name}}</strong></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{image.img.url}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="details" style="margin: 15px;">
+                            <p style="font-family: 'Alegreya Sans SC', sans-serif; ">Category: {{image.category}}</p>
+                            <p style="font-family: 'Alegreya Sans SC', sans-serif; ">Location: {{image.location}}</p>
+    
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input class="{{image.id}}" type="text" value="{{ image.img.url }}" />
+                            <button class="btn btn-sm btn-info" onclick="copyToClipboard('.{{ image.id }}')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+        </div>
+    
+    
+        <div class="row">
+            <h2 class="text-center">Images Unavailable</h2>
+        </div>
+        {% endfor %}
+    
+        <!-- Image details modal -->
+    
+    
+    
+    </div>
+</div>
+<footer class="bg-dark text-center text-white"style="opacity: 0.5;">
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" >
+      © 2021 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">HeartofVintasia.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+{% endblock %}
+
+
