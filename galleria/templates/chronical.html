@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+
+   <div class="row">
+     <img src="{{chronical.img.url}}"  class="img-responsive" alt="">
+   </div>
+
+   <div class="row">
+     <h1 class="text-center">{{chronical.img_name}}</h1>
+   </div>
+
+   <div class="row">
+     <p>{{chronical.img_description}}</p>
+   </div>
+
+
+ </div>
+
+ {% endblock %}
