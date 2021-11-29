@@ -23,3 +23,11 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html', {"message":message, "locations":locations})
+
+
+def chronical(request,img_id):
+    try:
+        chronical = Image.objects.get(id = img_id)
+    except DoesNotExist:
+        raise Http404()
+    return render (request,"chronical.html", {"chronical": chronical}) 
