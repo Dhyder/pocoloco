@@ -1,7 +1,5 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-
-
 # Create your models here.
 
 
@@ -33,6 +31,7 @@ class Location(models.Model):
     def __str__(self):
         return self.location_name
 
+
 class Image(models.Model):
     img = CloudinaryField('chronicles/')
     img_name = models.CharField(max_length= 30)
@@ -49,7 +48,7 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
-
+    
     @classmethod
     def get_all_images(cls):
         images = cls.objects.all()
@@ -59,3 +58,5 @@ class Image(models.Model):
     def search_by_category(cls,search):
         images = Image.objects.filter(category__name__icontains=search)
         return images
+
+
